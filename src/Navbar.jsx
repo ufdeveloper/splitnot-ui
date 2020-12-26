@@ -28,9 +28,15 @@ const Navbar = () => {
         <Container>
           <Menu.Item header>
             <Image size="mini" src="/react.svg" />
-            &nbsp;
-            <Link to="/">Okta-React Sample Project</Link>
+            &nbsp;&nbsp;&nbsp;
+            <Link to="/">SPLITNOT</Link>
           </Menu.Item>
+          {authState.isAuthenticated && (
+              <Menu.Item id="accounts-button">
+                <Icon name="account outline" />
+                <Link to="/accounts">Accounts</Link>
+              </Menu.Item>
+          )}
           {authState.isAuthenticated && (
           <Menu.Item id="messages-button">
             <Icon name="mail outline" />
