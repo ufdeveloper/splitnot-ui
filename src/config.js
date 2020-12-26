@@ -19,4 +19,10 @@ export default {
   resourceServer: {
     messagesUrl: 'http://localhost:8000/api/messages',
   },
+  splitnot: {
+    apiBaseUrl: 'http://localhost:8080',
+    accountsUrl: 'http://localhost:8080/accounts',
+    transactionsUrl: 'http://localhost:8080/transactions',
+    accessTokenUrl: 'http://localhost:8080/accessToken'
+  }
 };

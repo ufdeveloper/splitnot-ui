@@ -11,8 +11,10 @@
     "dotenv": "^8.1.0",
     "eslint-config-airbnb": "^18.2.1",
     "jquery": "^3.4.1",
+    "qs": "^6.9.4",
     "react": "^16.8.0",
     "react-dom": "^16.8.0",
+    "react-plaid-link": "^3.0.0",
     "react-router-dom": "^5.0.0",
     "react-scripts": "^4.0.0",
     "semantic-ui-css": "^2.2.12",
@@ -20,7 +22,7 @@
     "text-encoding": "^0.7.0"
   },
   "scripts": {
-    "start": "cross-env PORT=8080 react-app-rewired start",
+    "start": "cross-env PORT=3000 react-app-rewired start",
     "build": "react-app-rewired build",
     "test": "react-scripts test --watchAll=false",
     "eject": "react-scripts eject"

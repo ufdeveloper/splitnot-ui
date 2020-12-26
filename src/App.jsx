@@ -21,6 +21,9 @@ import CustomLoginComponent from './Login';
 import Messages from './Messages';
 import Navbar from './Navbar';
 import Profile from './Profile';
+import LinkAdd from './LinkAdd';
+import Accounts from "./Accounts";
+import Transactions from "./Transactions";
 
 const oktaAuth = new OktaAuth(config.oidc);
 
@@ -43,8 +46,11 @@ const App = () => {
           <Route path="/" exact component={Home} />
           <Route path="/login/callback" component={LoginCallback} />
           <Route path="/login" component={CustomLoginComponent} />
+          <SecureRoute path="/accounts" component={Accounts} />
+          <SecureRoute path="/linkAdd" component={LinkAdd} />
           <SecureRoute path="/messages" component={Messages} />
           <SecureRoute path="/profile" component={Profile} />
+          <SecureRoute path="/transactions" component={Transactions} />
         </Switch>
       </Container>
     </Security>

@@ -38,7 +38,7 @@ const Login = () => {
       logo: '/react.svg',
       i18n: {
         en: {
-          'primaryauth.title': 'Sign in to React & Company',
+          'primaryauth.title': 'Sign in to Splitnot',
         },
       },
       authParams: {
