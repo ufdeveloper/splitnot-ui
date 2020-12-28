@@ -1,6 +1,6 @@
 import { useOktaAuth } from '@okta/okta-react';
 import React, { useState, useEffect } from 'react';
-import { Header, Icon, Message, Table } from 'semantic-ui-react';
+import {Button, Header, Icon, Message, Table} from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
 
 import config from './config';
@@ -11,14 +11,21 @@ import {PlaidLink} from "react-plaid-link";
 
 const Accounts = () => {
   const { authState, oktaAuth } = useOktaAuth();
+  const [plaidLinkToken, setPlaidLinkToken] = useState(null);
   const [accounts, setAccounts] = useState(null);
   const [accountsFetchFailed, setAccountsFetchFailed] = useState(false);
+  const [plaidLinkTokenFetchFailed, setPlaidLinkTokenFetchFailed] = useState(false);
 
+  //TODO - check if this means adding a new item every time the page is loaded.
+  // If yes, then we need to change this behavior to load link token only when user click's `add new account`
+
+  // get link token for initializing PlaidLink
   // fetch accounts on page load only if user is authenticated
   useEffect(() => {
     if (authState.isAuthenticated) {
-      console.log("fetching accounts");
       const accessToken = oktaAuth.getAccessToken();
+
+      console.log("fetching accounts");
       fetch(config.splitnot.accountsUrl, {
         headers: {
           Authorization: `Bearer ${accessToken}`,
@@ -37,9 +44,40 @@ const Accounts = () => {
         .catch((err) => {
           setAccountsFetchFailed(true);
           /* eslint-disable no-console */
-          console.error(err);
+          console.error("failed to fetch configured accounts, error=" + err);
         });
+
+        console.log("fetching linkToken");
+      fetch(config.splitnot.linkTokenUrl, {
+        headers: {
+            Authorization: `Bearer ${accessToken}`,
+            Accept: 'application/json',
+            'Content-Type': 'application/json'
+        },
+          method: 'POST',
+      })
+          .then((response) => {
+            if (!response.ok) {
+              return Promise.reject();
+            }
+            return response.json();
+          })
+          .then((data) => {
+            console.log("successfully retrieved linkTokenResponse");
+            setPlaidLinkToken(data['linkToken']);
+            setPlaidLinkTokenFetchFailed(false);
+          })
+          .catch((err) => {
+              setPlaidLinkTokenFetchFailed(true);
+            /* eslint-disable no-console */
+            console.error("failed to fetch link token, error=" + err);
+          });
     }
+  }, [authState]);
+
+
+  useEffect(() => {
+
   }, [authState]);
 
   // Re-render DOM when accounts are updated after adding a new account via PlaidLink
@@ -121,11 +159,26 @@ const Accounts = () => {
         </Table>
       </div>
       )}
-      <PlaidLink
-          token='link-sandbox-b7799350-0166-40d5-b67e-3ff7d754174e'
-          onSuccess={onLinkSuccess} >
-        Connect a Bank Account
-      </PlaidLink>
+
+      <div>
+          {plaidLinkTokenFetchFailed && <Message error header="Not able to configure new bank accounts at this time" />}
+          {!plaidLinkToken && !plaidLinkTokenFetchFailed && <p>Configuring Plaid...</p>}
+          {plaidLinkToken
+          && (
+              <PlaidLink
+                  token={plaidLinkToken}
+                  onSuccess={onLinkSuccess} >
+                  Connect your Bank Account
+              </PlaidLink>
+          )}
+      </div>
+
+      {/*<Link to="/linkAdd">*/}
+      {/*  <Button>*/}
+      {/*    <p>Connect your Bank Account</p>*/}
+      {/*  </Button>*/}
+      {/*</Link>*/}
+
     </div>
   );
 };

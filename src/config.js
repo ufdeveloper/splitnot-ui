@@ -20,13 +20,15 @@ export default {
     messagesUrl: 'http://localhost:8000/api/messages',
   },
   splitnot: {
-    // apiBaseUrl: 'http://localhost:8080',
-    // accountsUrl: 'http://localhost:8080/accounts',
-    // transactionsUrl: 'http://localhost:8080/transactions',
-    // accessTokenUrl: 'http://localhost:8080/accessToken'
-    apiBaseUrl: 'http://ec2-54-164-66-75.compute-1.amazonaws.com:8080',
-    accountsUrl: 'http://ec2-54-164-66-75.compute-1.amazonaws.com:8080/accounts',
-    transactionsUrl: 'http://ec2-54-164-66-75.compute-1.amazonaws.com:8080/transactions',
-    accessTokenUrl: 'http://ec2-54-164-66-75.compute-1.amazonaws.com:8080/accessToken'
+    apiBaseUrl: 'http://localhost:8080',
+    accountsUrl: 'http://localhost:8080/accounts',
+    transactionsUrl: 'http://localhost:8080/transactions',
+    accessTokenUrl: 'http://localhost:8080/accessToken',
+    linkTokenUrl: 'http://localhost:8080/getLinkToken'
+    // apiBaseUrl: 'http://ec2-54-164-66-75.compute-1.amazonaws.com:8080',
+    // accountsUrl: 'http://ec2-54-164-66-75.compute-1.amazonaws.com:8080/accounts',
+    // transactionsUrl: 'http://ec2-54-164-66-75.compute-1.amazonaws.com:8080/transactions',
+    // accessTokenUrl: 'http://ec2-54-164-66-75.compute-1.amazonaws.com:8080/accessToken',
+    // linkTokenUrl: 'http://ec2-54-164-66-75.compute-1.amazonaws.com:8080/getLinkToken'
   }
 };
