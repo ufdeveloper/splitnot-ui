@@ -14,7 +14,7 @@ const Accounts = () => {
   const [accounts, setAccounts] = useState(null);
   const [accountsFetchFailed, setAccountsFetchFailed] = useState(false);
 
-  // fetch accounts
+  // fetch accounts on page load only if user is authenticated
   useEffect(() => {
     if (authState.isAuthenticated) {
       console.log("fetching accounts");
@@ -41,6 +41,11 @@ const Accounts = () => {
         });
     }
   }, [authState]);
+
+  // Re-render DOM when accounts are updated after adding a new account via PlaidLink
+  useEffect(() => {
+    console.log("re-rending DOM on accounts change");
+  }, [accounts]);
 
   const onLinkSuccess = (token, metadata) => {
     // send token to server
@@ -80,10 +85,6 @@ const Accounts = () => {
         });
   };
 
-  useEffect(() => {
-    console.log("re-rending DOM on accounts change");
-  }, [accounts]);
-
   const possibleErrors = [
     'You\'ve downloaded one of our resource server examples, and it\'s running on port 8000.',
     'Your resource server example is using the same Okta authorization server (issuer) that you have configured this React application to use.',
@@ -121,7 +122,7 @@ const Accounts = () => {
       </div>
       )}
       <PlaidLink
-          token='link-sandbox-2fb76116-c0ad-45f0-ae0c-94c809b6e77a'
+          token='link-sandbox-b7799350-0166-40d5-b67e-3ff7d754174e'
           onSuccess={onLinkSuccess} >
         Connect a Bank Account
       </PlaidLink>

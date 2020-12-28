@@ -59,6 +59,7 @@ const Login = () => {
       // Add tokens to storage
       oktaAuth.handleLoginRedirect(tokens);
     }).catch((err) => {
+      console.log("error calling showSignInToGetTokens=" + JSON.stringify(err));
       throw err;
     });
 

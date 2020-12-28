@@ -84,3 +84,5 @@ hs_err_pid*
 
 .eslintcache
 .DS_Store
+
+build
