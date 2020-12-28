@@ -24,6 +24,9 @@ import Profile from './Profile';
 import LinkAdd from './LinkAdd';
 import Accounts from "./Accounts";
 import Transactions from "./Transactions";
+import PrivacyPolicy from "./StaticContent/PrivacyPolicy";
+import TermsOfService from "./StaticContent/TermsOfService";
+import UserDataDeletionPolicy from "./StaticContent/UserDataDeletionPolicy";
 
 const oktaAuth = new OktaAuth(config.oidc);
 
@@ -46,6 +49,9 @@ const App = () => {
           <Route path="/" exact component={Home} />
           <Route path="/login/callback" component={LoginCallback} />
           <Route path="/login" component={CustomLoginComponent} />
+          <Route path="/privacy" component={PrivacyPolicy} />
+          <Route path="/tos" component={TermsOfService} />
+          <Route path="/datadeletion" component={UserDataDeletionPolicy} />
           <SecureRoute path="/accounts" component={Accounts} />
           <SecureRoute path="/linkAdd" component={LinkAdd} />
           <SecureRoute path="/messages" component={Messages} />

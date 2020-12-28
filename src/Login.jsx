@@ -35,7 +35,7 @@ const Login = () => {
       baseUrl: issuer.split('/oauth2')[0],
       clientId,
       redirectUri,
-      logo: '/react.svg',
+      logo: '/logo_black.png',
       i18n: {
         en: {
           'primaryauth.title': 'Sign in to Splitnot',

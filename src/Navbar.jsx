@@ -27,7 +27,7 @@ const Navbar = () => {
       <Menu fixed="top" inverted>
         <Container>
           <Menu.Item header>
-            <Image size="mini" src="/react.svg" />
+            <Image size="mini" src="/logo_white.png" />
             &nbsp;&nbsp;&nbsp;
             <Link to="/">SPLITNOT</Link>
           </Menu.Item>
