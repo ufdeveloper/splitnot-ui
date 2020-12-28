@@ -20,11 +20,11 @@ export default {
     messagesUrl: 'http://localhost:8000/api/messages',
   },
   splitnot: {
-    // apiBaseUrl: 'http://localhost:8080',
-    // accountsUrl: 'http://localhost:8080/accounts',
-    // transactionsUrl: 'http://localhost:8080/transactions',
-    // accessTokenUrl: 'http://localhost:8080/accessToken',
-    // linkTokenUrl: 'http://localhost:8080/getLinkToken'
+    apiBaseUrl: 'http://localhost:8080',
+    accountsUrl: 'http://localhost:8080/accounts',
+    transactionsUrl: 'http://localhost:8080/transactions',
+    accessTokenUrl: 'http://localhost:8080/accessToken',
+    linkTokenUrl: 'http://localhost:8080/getLinkToken'
 
     // EC2 public DNS
     // apiBaseUrl: 'http://ec2-54-164-66-75.compute-1.amazonaws.com:8080',
@@ -34,10 +34,10 @@ export default {
     // linkTokenUrl: 'http://ec2-54-164-66-75.compute-1.amazonaws.com:8080/getLinkToken'
 
     // prod
-    apiBaseUrl: 'https://api.splitnot.com',
-    accountsUrl: 'https://api.splitnot.com/accounts',
-    transactionsUrl: 'https://api.splitnot.com/transactions',
-    accessTokenUrl: 'https://api.splitnot.com/accessToken',
-    linkTokenUrl: 'https://api.splitnot.com/getLinkToken'
+    // apiBaseUrl: 'https://api.splitnot.com',
+    // accountsUrl: 'https://api.splitnot.com/accounts',
+    // transactionsUrl: 'https://api.splitnot.com/transactions',
+    // accessTokenUrl: 'https://api.splitnot.com/accessToken',
+    // linkTokenUrl: 'https://api.splitnot.com/getLinkToken'
   }
 };
