@@ -77,7 +77,7 @@ const SimulateNewTransactions = () => {
   return (
     <div>
       <Header as="h1">
-        <Icon name="mail outline" />
+        <Icon name="credit card outline" />
         Simulate New Transactions
       </Header>
       <p>This application used Plaid in sandbox mode, and Plaid does not push new transactions to an item in the sandbox mode.</p>
