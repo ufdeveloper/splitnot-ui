@@ -41,7 +41,7 @@ const Profile = () => {
     <div>
       <div>
         <Header as="h1">
-          <Icon name="drivers license outline" />
+          <Icon name="drivers license" />
           {' '}
           My User Profile (ID Token Claims)
           {' '}

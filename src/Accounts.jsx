@@ -131,7 +131,7 @@ const Accounts = () => {
   return (
     <div>
       <Header as="h1">
-        <Icon name="mail outline" />
+        <Icon name="building" />
         My Accounts
       </Header>
       {accountsFetchFailed && <Message error header="Failed to fetch accounts.  Please verify the following:" list={possibleErrors} />}
@@ -142,7 +142,7 @@ const Accounts = () => {
         <Table>
           <thead>
             <tr>
-              <th>Account ID</th>
+              {/*<th>Account ID</th>*/}
               <th>Account Name</th>
               <th>Actions</th>
             </tr>
@@ -150,9 +150,9 @@ const Accounts = () => {
           <tbody>
             {accounts.map((account) => (
               <tr id={account.id} key={account.id}>
-                <td>{account.id}</td>
+                {/*<td>{account.id}</td>*/}
                 <td>{account.name}</td>
-                <td><a href={'/transactions?accountId=' + account.id}>View Transactions</a></td>
+                <td><Link to={'/transactions?accountId=' + account.id}>View Transactions</Link></td>
               </tr>
             ))}
           </tbody>
@@ -160,14 +160,16 @@ const Accounts = () => {
       </div>
       )}
 
-      <div>
+      <div style={{align: 'center'}}>
           {plaidLinkTokenFetchFailed && <Message error header="Not able to configure new bank accounts at this time" />}
           {!plaidLinkToken && !plaidLinkTokenFetchFailed && <p>Configuring Plaid...</p>}
           {plaidLinkToken
           && (
               <PlaidLink
                   token={plaidLinkToken}
-                  onSuccess={onLinkSuccess} >
+                  onSuccess={onLinkSuccess}
+                  style={{padding: '10px', borderRadius: '20px', backgroundColor: '#bfbfbf'}}
+              >
                   Connect your Bank Account
               </PlaidLink>
           )}

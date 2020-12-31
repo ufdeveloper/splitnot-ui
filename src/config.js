@@ -23,8 +23,11 @@ export default {
     apiBaseUrl: 'http://localhost:8080',
     accountsUrl: 'http://localhost:8080/accounts',
     transactionsUrl: 'http://localhost:8080/transactions',
+    newTransactionsUrl: 'http://localhost:8080/transactions/new',
+    transactionsPollUrl: 'http://localhost:8080/transactions/poll',
     accessTokenUrl: 'http://localhost:8080/accessToken',
-    linkTokenUrl: 'http://localhost:8080/getLinkToken'
+    linkTokenUrl: 'http://localhost:8080/getLinkToken',
+    fireSandboxWebhookUrl: 'http://localhost:8080/fireWebhook',
 
     // EC2 public DNS
     // apiBaseUrl: 'http://ec2-54-164-66-75.compute-1.amazonaws.com:8080',
@@ -37,7 +40,10 @@ export default {
     // apiBaseUrl: 'https://api.splitnot.com',
     // accountsUrl: 'https://api.splitnot.com/accounts',
     // transactionsUrl: 'https://api.splitnot.com/transactions',
+    // newTransactionsUrl: 'https://api.splitnot.com/transactions/new',
+    // transactionsPollUrl: 'https://api.splitnot.com/transactions/poll',
     // accessTokenUrl: 'https://api.splitnot.com/accessToken',
     // linkTokenUrl: 'https://api.splitnot.com/getLinkToken'
+    // fireSandboxWebhookUrl: 'https://api.splitnot.com/fireWebhook',
   }
 };

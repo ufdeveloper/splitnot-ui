@@ -53,7 +53,7 @@ const Accounts = () => {
   return (
     <div>
       <Header as="h1">
-        <Icon name="mail outline" />
+        <Icon name="credit card outline" />
         Transactions
       </Header>
       {transactionsFetchFailed && <Message error header="Failed to fetch transactions.  Please verify the following:" list={possibleErrors} />}
