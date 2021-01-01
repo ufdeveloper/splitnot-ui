@@ -30,6 +30,7 @@ import UserDataDeletionPolicy from "./StaticContent/UserDataDeletionPolicy";
 import RecentTransactions from "./RecentTransactions";
 import SimulateNewTransactions from "./SimulateNewTransactions";
 import About from "./About";
+import AddToSplitwise from "./AddToSplitwise";
 
 const oktaAuth = new OktaAuth(config.oidc);
 
@@ -63,6 +64,7 @@ const App = () => {
           <SecureRoute path="/transactions" component={Transactions} />
           <SecureRoute path="/newtransactions" component={RecentTransactions} />
           <SecureRoute path="/simulatenewtransactions" component={SimulateNewTransactions} />
+          <SecureRoute path="/addtosplitwise" component={AddToSplitwise} />
         </Switch>
       </Container>
     </Security>
