@@ -21,6 +21,9 @@ const Home = () => {
   const [userInfo, setUserInfo] = useState(null);
 
   useEffect(() => {
+    document.body.style = "background-image: url('back19.jpg'); background-repeat: no-repeat;\n" +
+        "  // background-attachment: fixed;\n" +
+        "  // background-size: cover;";
     if (!authState.isAuthenticated) {
       // When user isn't authenticated, forget any user info
       setUserInfo(null);
@@ -29,6 +32,10 @@ const Home = () => {
         setUserInfo(info);
       });
     }
+
+    return function cleanup() {
+      document.body.style = "background-image: linear-gradient(to bottom right, #edeff2, white); background-repeat: no-repeat; background-attachment: fixed; background-size: cover;";
+    };
   }, [authState, oktaAuth]); // Update if authState changes
 
   const login = async () => {
@@ -58,18 +65,20 @@ const Home = () => {
             !
           </p>
           <p>
-            You have successfully authenticated against your Okta org, and have been redirected back to this application.  You now have an ID token and access token in local storage.
-            Visit the
+            Now that you have logged in successfully, visit the
             {' '}
-            <a href="/profile">My Profile</a>
+            <a href="/accounts">Accounts</a>
             {' '}
-            page to take a look inside the ID token.
+            page to view your configured bank accounts or add a new account.
           </p>
           <p>
-            Once you have downloaded and started the example resource server, you can visit the
-            <a href="/messages">My Messages</a>
+            Once you have configured a bank account, you can simulate new transactions by visiting the
             {' '}
-            page to see the authentication process in action.
+            <a href="/simulatenewtransactions">Simulate New Transactions</a>
+            {' '}
+            page. The app simulates new transactions on the demo account you added.
+            Notice the notifications logo on the top right corner changes when the app realizes new transactions are available on your account.
+            Click on the notifications icon to view the new transactions.
           </p>
         </div>
         )}
@@ -77,18 +86,10 @@ const Home = () => {
         {!authState.isAuthenticated
         && (
         <div>
-          <p>If you&lsquo;re viewing this page then you have successfully started this React application.</p>
-          <p>
-            <span>This example shows you how to use the </span>
-            <a href="https://github.com/okta/okta-oidc-js/tree/master/packages/okta-react">Okta React Library</a>
-            <span> to add the </span>
-            <a href="https://developer.okta.com/docs/guides/implement-auth-code-pkce">PKCE Flow</a>
-            <span> to your application.</span>
-          </p>
-          <p>
-            When you click the login button below, you will be redirected to the login page on your Okta org.
-            After you authenticate, you will be returned to this application with an ID token and access token.  These tokens will be stored in local storage and can be retrieved at a later time.
-          </p>
+          <p>Forgot to add your bills to Splitwise after a trip? Too lazy to dig through your bank transactions to add the right bills?</p>
+          <p><b>Splitwise makes all this easy for you!</b></p>
+          <p>Splitwise notifies you when new transactions are posted to your configured bank accounts. You can turn on notifications before setting out on your trip, or get notified only on transactions on certain categories or amounts.</p>
+          <p><i>This is a prototype and uses a demo bank account</i> (<a href="/about#sandbox-creds">instructions on using demo account).</a> Click Login below to get started.</p>
           <Button id="login-button" primary onClick={login}>Login</Button>
         </div>
         )}

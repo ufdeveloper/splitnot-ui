@@ -28,8 +28,8 @@ import PrivacyPolicy from "./StaticContent/PrivacyPolicy";
 import TermsOfService from "./StaticContent/TermsOfService";
 import UserDataDeletionPolicy from "./StaticContent/UserDataDeletionPolicy";
 import RecentTransactions from "./RecentTransactions";
-import TransactionsPoller from "./TransactionsPoller";
 import SimulateNewTransactions from "./SimulateNewTransactions";
+import About from "./About";
 
 const oktaAuth = new OktaAuth(config.oidc);
 
@@ -55,6 +55,7 @@ const App = () => {
           <Route path="/privacy" component={PrivacyPolicy} />
           <Route path="/tos" component={TermsOfService} />
           <Route path="/datadeletion" component={UserDataDeletionPolicy} />
+          <Route path="/about" component={About} />
           <SecureRoute path="/accounts" component={Accounts} />
           <SecureRoute path="/linkAdd" component={LinkAdd} />
           <SecureRoute path="/messages" component={Messages} />

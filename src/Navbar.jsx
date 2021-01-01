@@ -28,6 +28,7 @@ const Navbar = () => {
     setNewNotifications(0);
   }
 
+  // Polling logic as found here - https://overreacted.io/making-setinterval-declarative-with-react-hooks/
   function TransactionsPoller () {
 
     useInterval(() => {
@@ -117,6 +118,12 @@ const Navbar = () => {
             </Menu.Item>
           )}
           {!authState.isPending && !authState.isAuthenticated && <Menu.Item onClick={login}>Login</Menu.Item>}
+          {
+            <Menu.Item id={"about"}>
+              <Icon name="info circle" />
+              <Link to="/about">About</Link>
+            </Menu.Item>
+          }
           {authState.isAuthenticated && (
               <Popup
                 trigger={
