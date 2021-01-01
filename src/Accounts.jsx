@@ -123,18 +123,13 @@ const Accounts = () => {
         });
   };
 
-  const possibleErrors = [
-    'You\'ve downloaded one of our resource server examples, and it\'s running on port 8000.',
-    'Your resource server example is using the same Okta authorization server (issuer) that you have configured this React application to use.',
-  ];
-
   return (
     <div>
       <Header as="h1">
         <Icon name="building" />
         My Accounts
       </Header>
-      {accountsFetchFailed && <Message error header="Failed to fetch accounts.  Please verify the following:" list={possibleErrors} />}
+      {accountsFetchFailed && <Message error header="Failed to fetch accounts." />}
       {!accounts && !accountsFetchFailed && <p>Fetching Accounts..</p>}
       {accounts
       && (
@@ -174,13 +169,6 @@ const Accounts = () => {
               </PlaidLink>
           )}
       </div>
-
-      {/*<Link to="/linkAdd">*/}
-      {/*  <Button>*/}
-      {/*    <p>Connect your Bank Account</p>*/}
-      {/*  </Button>*/}
-      {/*</Link>*/}
-
     </div>
   );
 };

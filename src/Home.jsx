@@ -87,8 +87,8 @@ const Home = () => {
         && (
         <div>
           <p>Forgot to add your bills to Splitwise after a trip? Too lazy to dig through your bank transactions to add the right bills?</p>
-          <p><b>Splitwise makes all this easy for you!</b></p>
-          <p>Splitwise notifies you when new transactions are posted to your configured bank accounts. You can turn on notifications before setting out on your trip, or get notified only on transactions on certain categories or amounts.</p>
+          <p><b>SPLITNOT makes all this easy for you!</b></p>
+          <p>Splitnot notifies you when new transactions are posted to your configured bank accounts. You can turn on notifications before setting out on your trip, or get notified only on transactions on certain categories or amounts.</p>
           <p><i>This is a prototype and uses a demo bank account</i> (<a href="/about#sandbox-creds">instructions on using demo account).</a> Click Login below to get started.</p>
           <Button id="login-button" primary onClick={login}>Login</Button>
         </div>

@@ -18,9 +18,6 @@ const Accounts = () => {
 
       let parsedAccountId = qs.parse(location.search, { ignoreQueryPrefix: true }).accountId;
       console.log("accountId=" + parsedAccountId);
-      // let transactionsUrl = new URL(config.splitnot.transactionsUrl);
-      // let params = {accountId: parsedAccountId};
-      // transactionsUrl.search = new URLSearchParams(params).toString();
 
       fetch(config.splitnot.transactionsUrl + '?accountId=' + parsedAccountId, {
         headers: {
@@ -45,18 +42,13 @@ const Accounts = () => {
     }
   }, [authState]);
 
-  const possibleErrors = [
-    'You\'ve downloaded one of our resource server examples, and it\'s running on port 8000.',
-    'Your resource server example is using the same Okta authorization server (issuer) that you have configured this React application to use.',
-  ];
-
   return (
     <div>
       <Header as="h1">
         <Icon name="credit card outline" />
         Transactions
       </Header>
-      {transactionsFetchFailed && <Message error header="Failed to fetch transactions.  Please verify the following:" list={possibleErrors} />}
+      {transactionsFetchFailed && <Message error header="Failed to fetch transactions." />}
       {!transactions && !transactionsFetchFailed && <p>Fetching Transactions..</p>}
       {transactions
       && (

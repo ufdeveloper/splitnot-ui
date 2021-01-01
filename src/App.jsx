@@ -18,7 +18,6 @@ import { Container } from 'semantic-ui-react';
 import config from './config';
 import Home from './Home';
 import CustomLoginComponent from './Login';
-import Messages from './Messages';
 import Navbar from './Navbar';
 import Profile from './Profile';
 import LinkAdd from './LinkAdd';
@@ -59,7 +58,6 @@ const App = () => {
           <Route path="/about" component={About} />
           <SecureRoute path="/accounts" component={Accounts} />
           <SecureRoute path="/linkAdd" component={LinkAdd} />
-          <SecureRoute path="/messages" component={Messages} />
           <SecureRoute path="/profile" component={Profile} />
           <SecureRoute path="/transactions" component={Transactions} />
           <SecureRoute path="/newtransactions" component={RecentTransactions} />
