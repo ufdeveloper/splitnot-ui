@@ -49,7 +49,12 @@ const Login = () => {
       idps: [
         { type: 'FACEBOOK', id: '0oajc3cxuyawcWgNZ4x6' }
       ],
-      idpDisplay: 'PRIMARY'
+      idpDisplay: 'PRIMARY',
+      features: {
+        // Used to enable registration feature on the widget.
+        // https://github.com/okta/okta-signin-widget#feature-flags
+        registration: true // REQUIRED
+      }
     });
 
     widget.showSignInToGetTokens({
