@@ -46,25 +46,26 @@ const App = () => {
       oktaAuth={oktaAuth}
       onAuthRequired={customAuthHandler}
     >
-      <Navbar />
-      <Container text style={{ marginTop: '7em' }}>
-        <Switch>
-          <Route path="/" exact component={Home} />
-          <Route path="/login/callback" component={LoginCallback} />
-          <Route path="/login" component={CustomLoginComponent} />
-          <Route path="/privacy" component={PrivacyPolicy} />
-          <Route path="/tos" component={TermsOfService} />
-          <Route path="/datadeletion" component={UserDataDeletionPolicy} />
-          <Route path="/about" component={About} />
-          <SecureRoute path="/accounts" component={Accounts} />
-          <SecureRoute path="/linkAdd" component={LinkAdd} />
-          <SecureRoute path="/profile" component={Profile} />
-          <SecureRoute path="/transactions" component={Transactions} />
-          <SecureRoute path="/newtransactions" component={RecentTransactions} />
-          <SecureRoute path="/simulatenewtransactions" component={SimulateNewTransactions} />
-          <SecureRoute path="/addtosplitwise" component={AddToSplitwise} />
-        </Switch>
-      </Container>
+      <Navbar>
+        <Container text style={{ marginTop: '7em' }}>
+          <Switch>
+            <Route path="/" exact component={Home} />
+            <Route path="/login/callback" component={LoginCallback} />
+            <Route path="/login" component={CustomLoginComponent} />
+            <Route path="/privacy" component={PrivacyPolicy} />
+            <Route path="/tos" component={TermsOfService} />
+            <Route path="/datadeletion" component={UserDataDeletionPolicy} />
+            <Route path="/about" component={About} />
+            <SecureRoute path="/accounts" component={Accounts} />
+            <SecureRoute path="/linkAdd" component={LinkAdd} />
+            <SecureRoute path="/profile" component={Profile} />
+            <SecureRoute path="/transactions" component={Transactions} />
+            <SecureRoute path="/newtransactions" component={RecentTransactions} />
+            <SecureRoute path="/simulatenewtransactions" component={SimulateNewTransactions} />
+            <SecureRoute path="/addtosplitwise" component={AddToSplitwise} />
+          </Switch>
+        </Container>
+      </Navbar>
     </Security>
   );
 };
