@@ -169,6 +169,18 @@ const Accounts = () => {
               </PlaidLink>
           )}
       </div>
+
+      <div style={{marginTop:'2em'}}>
+          <Message
+              success
+              header='The application is in sandbox mode'
+              content='Please use the above sandbox account credentials to connect a demo bank account. You will NOT be able to add your actual bank account.'
+              list={[
+                  'username : user_good',
+                  'password : pass_good'
+              ]}
+          />
+      </div>
     </div>
   );
 };
