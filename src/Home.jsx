@@ -20,6 +20,7 @@ const Home = () => {
   const { authState, oktaAuth } = useOktaAuth();
   const [userInfo, setUserInfo] = useState(null);
 
+  //TODO - add credit for backgroud image - https://www.pexels.com/photo/old-boat-on-grassy-field-in-overcast-4775481/
   useEffect(() => {
     document.body.style = "background-image: url('back19.jpg'); background-repeat: no-repeat;\n" +
         "  // background-attachment: fixed;\n" +

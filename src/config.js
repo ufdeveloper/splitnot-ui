@@ -45,5 +45,8 @@ export default {
     accessTokenUrl: 'https://api.splitnot.com/accessToken',
     linkTokenUrl: 'https://api.splitnot.com/getLinkToken',
     fireSandboxWebhookUrl: 'https://api.splitnot.com/fireWebhook',
+  },
+  googleTracking: {
+    trackingKey: 'G-XLLP65LMRJ'
   }
 };

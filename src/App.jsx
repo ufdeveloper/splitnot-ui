@@ -30,11 +30,14 @@ import RecentTransactions from "./RecentTransactions";
 import SimulateNewTransactions from "./SimulateNewTransactions";
 import About from "./About";
 import AddToSplitwise from "./AddToSplitwise";
+import useTracking from './useTracking';
 
 const oktaAuth = new OktaAuth(config.oidc);
+const googleTacking = config.googleTracking;
 
 const App = () => {
   const history = useHistory(); // example from react-router
+  useTracking(googleTacking.trackingKey);
 
   const customAuthHandler = () => {
     // Redirect to the /login page that has a CustomLoginComponent
